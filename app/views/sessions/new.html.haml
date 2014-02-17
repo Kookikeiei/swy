@@ -1,0 +1,15 @@
+%p#notice= notice
+%p Log in page
+= form_tag(sessions_create_path,:method => 'get' ) do 
+ 
+    = label_tag :username
+    = text_field_tag :username
+  
+    = label_tag :password
+    = text_field_tag :password
+  
+    = submit_tag 'Login'
+%br
+%br
+%br
+= link_to 'about page' , about_path
