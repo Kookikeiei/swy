@@ -6,9 +6,9 @@ Feature: Sign up to the Apartment Application
 
     Background:
       Given the following user exists:
-|username|password |name   |surname|age|birth_date|personal_id|address|email     |rent|room_no|  
-|admin2   |123456789|Pigdome|pd     |22 |20/10/91  |11111111111|b6     |pd@hot.com|20  |s01    |
-|kham    |5678000  |khamsai|ks     |21 |06/01/92  |22222222222|b6     |ks@hot.com|30  |s01    |
+|username|password |name   |surname|age|birth_date|personal_id|address|email     |rent|room_no|phone   |
+|admin   |123456789|Pigdome|pd     |22 |20/10/91  |11111111111|b6     |pd@hot.com|20  |s01    |08111111|
+|kham    |5678000  |khamsai|ks     |21 |06/01/92  |22222222222|b6     |ks@hot.com|30  |s01    |127344  |
 
 Scenario: sing up Successful
   Given I am on the login 
@@ -24,6 +24,7 @@ Scenario: sing up Successful
   And I fill in "Birth date" with "20/10/34"
   And I fill in "Personal" with "888888888888"
   And I fill in "Address" with "abc defg 555" 
+  And I fill in "Phone" with "08979555" 
   And I fill in "Email" with "pigdome@hotmail.com"
   And I fill in "Rent" with "20"
   And I fill in "Room no" with "0"

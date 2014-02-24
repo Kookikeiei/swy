@@ -1,46 +1,23 @@
+%table#left 
+ %tr
+  %td= link_to 'Log out', sessions_destroy_path
+
 %h1 Sawanya Apartment
 %p#notice= notice
 
-%table 
- %tr
-  %td Name
-  %td :
-  %td= @user.name
- %tr
-  %td Sername
-  %td :
-  %td= @user.surname
- %tr
-  %td Age
-  %td :
-  %td= @user.age
- %tr
-  %td Birth Date
-  %td :
-  %td= @user.birth_date
- %tr
-  %td Personal ID
-  %td :
-  %td= @user.personal_id
- %tr
-  %td Address
-  %td :
-  %td= @user.address
- %tr
-  %td E-mail
-  %td :
-  %td= @user.email
- %tr
-  %td Rent
-  %td :
-  %td= @user.rent
- %tr
-  %td Room No.
-  %td :
-  %td= @user.room_no
+Room No. 
+=@user.room_no
 
 
+
+Name 
+=@user.name 
+=@user.surname
 %br
+= link_to 'Rental', information_path(@user)
+%br
+= link_to 'Tenant Information', information_path(@user)
+%br
+= link_to 'Repair Notification', information_path(@user)
 
-= link_to 'Log out', sessions_destroy_path
   

@@ -11,6 +11,10 @@ module NavigationHelpers
       '/admin'
     when /signup\s?page/
       '/users/new'
+    when /information\s?page/
+      information_path User.find(sessions[:if_id])
+    when /member\s?page/
+      '/meminf'
     
 
     else

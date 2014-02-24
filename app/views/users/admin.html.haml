@@ -1,28 +1,11 @@
 %p#notice= notice
 %h1 Admin page
 
-%table 
-  %tr
 
-  - @users.each do |user|
-    %tr
-      %td= user.name
-      %td= user.surname
-      %td= user.age
-      %td= user.birth_date
-      %td= user.personal_id
-      %td= user.address
-      %td= user.email
-      %td= user.rent
-      %td= user.room_no
-      %td= user.username
-      %td= user.password
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+= link_to 'Member Information', meminf_path
 %br
-
+= link_to 'Repair Notification', new_user_path
+%br
 = link_to 'New User', new_user_path
 %br
 = link_to 'Log out', sessions_destroy_path

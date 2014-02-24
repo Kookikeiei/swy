@@ -16,6 +16,9 @@ Project::Application.routes.draw do
   match '/feature',to: 'users#feature',            via: 'get'
   match '/mockup', to: 'users#mockup',            via: 'get'
   match '/story',  to: 'users#story',            via: 'get'
+
+  match 'users/:id/information' => 'users#information', :as => :information
+  match '/meminf',  to: 'users#meminf',            via: 'get'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

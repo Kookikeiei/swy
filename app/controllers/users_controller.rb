@@ -83,11 +83,9 @@ class UsersController < ApplicationController
       flash[:notice] = 'You are not admin please Login'
       redirect_to sessions_new_path 
     else
-      @users = User.all
-  
       respond_to do |format|
         format.html # index.html.erb
-        format.json { render json: @users }
+        format.json { head :no_content }
       end 
     end   
   end
@@ -102,4 +100,26 @@ class UsersController < ApplicationController
   end
   def featire
   end
+
+  def information
+    @user = User.find(session[:user_id])
+       if @user.username == 'admin'
+         @user = User.find(params[:id])
+       end
+  end
+  
+  def meminf
+    @user = User.find(session[:user_id]) 
+    if @user.username != 'admin'
+      flash[:notice] = 'You are not admin please Login'
+      redirect_to sessions_new_path 
+    else
+      @users = User.all
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @users }
+      end 
+    end   
+  end
+
 end

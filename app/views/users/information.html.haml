@@ -1,0 +1,52 @@
+%table#left 
+ %tr
+  %td= link_to 'Log out', sessions_destroy_path
+
+
+%p#h1 Tenant Information 
+
+
+%table
+ %tr
+  %td Name
+  %td :
+  %td= @user.name 
+ %tr
+  %td Surname
+  %td :
+  %td= @user.surname
+ %tr
+  %td Age
+  %td :
+  %td= @user.age
+ %tr
+  %td Birth Date
+  %td :
+  %td= @user.birth_date
+ %tr
+  %td Personal ID
+  %td :
+  %td= @user.personal_id
+ %tr
+  %td Address
+  %td :
+  %td= @user.address
+ %tr
+  %td Phone
+  %td :
+  %td= @user.phone
+ %tr
+  %td E-mail
+  %td :
+  %td= @user.email
+ %tr
+  %td Room No.
+  %td :
+  %td= @user.room_no
+ %tr
+  %td Rent
+  %td :
+  %td= @user.rent
+
+
+%br
