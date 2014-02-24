@@ -19,7 +19,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
-gem 'simplecov', :require => false, :group => :test
+
 
 group :production do
   gem 'pg'
