@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :birth_date
       t.string :personal_id
       t.string :address
+      t.string :phone
       t.string :email
       t.string :rent
       t.string :room_no
