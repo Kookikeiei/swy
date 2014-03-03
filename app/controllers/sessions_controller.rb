@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
 	    if user != nil
 		    if user.username == 'admin'
                session[:user_id] = user.id
+               session[:admin] = '555'
 			   flash[:notice] = 'Welcome back, ' + user.username + '!'
 			   redirect_to admin_path 
 			else
@@ -27,6 +28,7 @@ class SessionsController < ApplicationController
 	# DELETE logout action
 	def destroy
 		session[:user_id] = nil
+		session[:admin] = nil
 		flash[:notice] = "Log out successful"
 		render 'new'
 	end

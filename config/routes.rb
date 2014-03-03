@@ -1,6 +1,8 @@
 Project::Application.routes.draw do
   
 
+  resources :rentals
+
   get "sessions/new"
 
   get "sessions/create"
@@ -18,7 +20,11 @@ Project::Application.routes.draw do
   match '/story',  to: 'users#story',            via: 'get'
 
   match 'users/:id/information' => 'users#information', :as => :information
+  match 'rentals/:id/show' => 'rentals#show', :as => :show_rental
+  match 'rentals/:id/showuser' => 'rentals#showuser', :as => :show_user
   match '/meminf',  to: 'users#meminf',            via: 'get'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

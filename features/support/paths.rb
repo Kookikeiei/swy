@@ -15,6 +15,8 @@ module NavigationHelpers
       information_path User.find(sessions[:if_id])
     when /member\s?page/
       '/meminf'
+    when /rental\s?page/
+      '/rentals/showuser'
     
 
     else

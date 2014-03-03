@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Room no:
+  = @rental.room_no
+%p
+  %b Rent:
+  = @rental.rent
+%p
+  %b Name:
+  = @rental.name
+%p
+  %b Elec unit:
+  = @rental.elec_unit
+%p
+  %b Water unit:
+  = @rental.water_unit
+%p
+  %b Unpay:
+  = @rental.unpay
+
+
+\|
+= link_to 'Back', users_path

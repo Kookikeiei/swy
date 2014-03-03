@@ -18,7 +18,8 @@ describe 'rental' do
   end
 
   describe 'user see rental' do
-     user = FactoryGirl.create(:user)
+     rental = FactoryGirl.create(:rental)
+      user = FactoryGirl.create(:user)
    before do
       fill_in :username, with: user.username
       fill_in :password, with: user.password
@@ -42,9 +43,9 @@ describe 'rental' do
       fill_in :username, with: 'admin'
       fill_in :password, with: '123456789'
       click_on 'Login'
-      click_on 'Rental Manager'
+      click_on 'Member Information'
       end
-      it { should have_link 'add rental and unit' }
+      it { should have_link 'Rental' }
       it { should have_link 'Log out' }
   end
 

@@ -30,6 +30,12 @@ Given /the following user exist/ do |user_table|
     end
 end
 
+Given /the following rental exist/ do |user_table|
+    user_table.hashes.each do |a|
+      Rental.create!(a)
+    end
+end
+
 
 When /^I go to (.+)$/ do |page_name|
   visit path_to(page_name)
@@ -40,7 +46,7 @@ When /^I press "([^\"]*)"$/ do |button|
 end
 
 When /^I click "([^\"]*)"$/ do |link|
-  click_on(link)
+  click_on(link, match: :first)
 end
 
 Given /^I leave the "([^\"]*)"$/  do |field|

@@ -17,6 +17,7 @@
    %td= user.room_no
    %td &nbsp&nbsp&nbsp&nbsp
    %td= link_to 'Tenant Information', information_path(user)
+   %td= link_to 'Rental', show_rental_path(user)
    %td= link_to 'Edit', edit_user_path(user)
    %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
