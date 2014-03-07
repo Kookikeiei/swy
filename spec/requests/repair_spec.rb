@@ -24,12 +24,10 @@ describe 'Repair' do
       fill_in :password, with: user.password
       click_on 'Login'
       click_on 'Repair Notification'  
-    end
-   before do
-      fill_in :room_no, with: user.room_no
-      fill_in :name, with: user.username
-      fill_in :problem, with: 'The bathroom has problem'
-      click_on 'Post problem'
+      #fill_in :Room_no, with: user.room_no
+      fill_in :Name, with: user.username
+      fill_in :Problem, with: 'The bathroom has problem'
+      click_on 'Post Problem'
     end
       it { should have_content("Problem") }
       it { should have_content("Room no") }

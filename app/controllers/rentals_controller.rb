@@ -17,7 +17,7 @@ class RentalsController < ApplicationController
     @rental = Rental.find_by_room_no(user.room_no)
 
     if @rental == nil
-       redirect_to new_rental_url
+       redirect_to users_path
     else   
       if session[:admin] == '555'
         respond_to do |format|
