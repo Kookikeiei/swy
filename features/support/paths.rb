@@ -17,6 +17,10 @@ module NavigationHelpers
       '/meminf'
     when /rental\s?page/
       '/rentals/showuser'
+    when /repair\s?page/
+      '/repairs/new'
+    when /adrep\s?page/
+      '/repairs'
     
 
     else

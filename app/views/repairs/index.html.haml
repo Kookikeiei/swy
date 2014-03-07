@@ -1,0 +1,22 @@
+%h1 Listing repairs
+
+%table
+  %tr
+    %th Room No
+    %th Name
+    %th Problem
+    %th
+    %th
+    %th
+
+  - @repairs.each do |repair|
+    %tr
+      %td= repair.room_no
+      %td= repair.name
+      %td= repair.problem
+      %td= link_to 'Edit', edit_repair_path(repair)
+      %td= link_to 'Remove Notification', repair, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Repair', new_repair_path

@@ -23,16 +23,17 @@ describe 'Repair' do
       fill_in :username, with: user.username
       fill_in :password, with: user.password
       click_on 'Login'
-      click_on 'Repair Notification'
-      fill_in :text, with: "The bathroom has problem"
-      fill_in :username, with: user.username
+      click_on 'Repair Notification'  
+    end
+   before do
       fill_in :room_no, with: user.room_no
+      fill_in :name, with: user.username
+      fill_in :problem, with: 'The bathroom has problem'
       click_on 'Post problem'
     end
       it { should have_content("Problem") }
       it { should have_content("Room no") }
       it { should have_content("Name") }
-      it { should have_link 'Remove problem' }
       
    
   end
@@ -40,6 +41,7 @@ describe 'Repair' do
 
   describe "admin can manage rental" do
      FactoryGirl.create(:admin)
+     FactoryGirl.create(:repair)
      #repair = FactoryGirl.create(:repair)
       before do
       fill_in :username, with: 'admin'
@@ -48,10 +50,9 @@ describe 'Repair' do
       click_on 'Repair Notification'
       end
       it { should have_content("Problem") }
-      it { should have_content("Room no") }
+      it { should have_content("Room No") }
       it { should have_content("Name") }
-      it { should have_link 'Remove problem' }
-      it { should have_link 'Seen and Fixing' }
+      it { should have_link 'Remove Notification' }
   end
 
 

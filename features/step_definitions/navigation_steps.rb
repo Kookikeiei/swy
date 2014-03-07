@@ -36,6 +36,12 @@ Given /the following rental exist/ do |user_table|
     end
 end
 
+Given /the following repair exist/ do |user_table|
+    user_table.hashes.each do |a|
+      Repair.create!(a)
+    end
+end
+
 
 When /^I go to (.+)$/ do |page_name|
   visit path_to(page_name)

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Room No:
+  = @repair.room_no
+%p
+  %b Name:
+  = @repair.name
+%p
+  %b Problem:
+  = @repair.problem
+
+= link_to 'Edit', edit_repair_path(@repair)
+\|
+= link_to 'Back', users_path

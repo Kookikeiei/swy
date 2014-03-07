@@ -1,6 +1,8 @@
 Project::Application.routes.draw do
   
 
+  resources :repairs
+
   resources :rentals
 
   get "sessions/new"

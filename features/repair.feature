@@ -14,9 +14,9 @@ Background:
 |kham    |5678000  |khamsai|ks     |21 |06/01/92  |22222222222|b6     |ks@hot.com|30  |s01    |127344  |
 
  Given the following repair exists:
-|room_no |rent  |name   |text       |seen_fix |
-|s01     |20    |Pigdome| brabra    |         |
-|s01     |50    |khamsai| qwerty    |         |
+|room_no |name   |problem    |
+|s01     |Pigdome| brabra    |     
+|s01     |kham   | qwerty    |        
 
  Scenario: user can add repair problem
         Given I am on the login 
@@ -26,8 +26,11 @@ Background:
         Then I should be on system page
         And I click "Repair Notification"
         Then I should be on repair page
-        And I click "Post problem"
-        Then I should see "Successful post"
+        And I fill in "Room no" with "s01"
+        And I fill in "Name" with "kham"
+        And I fill in "Problem" with "qwerty"
+        And I click "Post Problem"
+        Then I should see "qwerty"
 
 Scenario: admin can see repair information
         Given I am on the login 
@@ -36,10 +39,8 @@ Scenario: admin can see repair information
         When I press "Login"
         Then I should be on admin page
         And I click "Repair Notification"
-        Then I should be on manage repair page
+        Then I should be on adrep page
         Then I should see "Room No"
-        Then I should see "Rent"
         Then I should see "Problem"
         Then I should see "Name"
-        Then I should see "Seen and Fixing"
         Then I should see "Remove Notification"
