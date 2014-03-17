@@ -1,3 +1,12 @@
+%body.repair
+
+%br
+%br
+%br
+%br
+%br
+%br
+%br
 %p#notice= notice
 = form_for @repair do |f|
   - if @repair.errors.any?
@@ -8,13 +17,19 @@
           %li= msg
 
   .field
-    = f.label :room_no
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     = f.text_field :room_no
   .field
-    = f.label :name
+    %br
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     = f.text_field :name
   .field
-    = f.label :problem
+    %br 
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     = f.text_area :problem
   .actions
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     = f.submit 'Post Problem'

@@ -1,23 +1,39 @@
+%body.user
 %table#left 
  %tr
-  %td= link_to 'Log out', sessions_destroy_path
-
-%h1 Sawanya Apartment
-%p#notice= notice
-
-Room No. 
-=@user.room_no
+  %td= link_to image_tag( 'b_logout.jpg'), sessions_destroy_path
 
 
-
-Name 
-=@user.name 
-=@user.surname
 %br
-= link_to 'Rental', show_rental_path(@user)
 %br
-= link_to 'Tenant Information', information_path(@user)
 %br
-= link_to 'Repair Notification', new_repair_path
+%br
+%br
+%br
+%br
+%br
+
+%tr
+ %td &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ %td &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ %td &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ %td &nbsp&nbsp&nbsp&nbsp&nbsp
+ %td=@user.room_no
+ %td &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ %td &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ %td=@user.name 
+ %td=@user.surname
+%br
+%br
+%br
+%br
+%br
+%table
+ %tr
+  %td= link_to image_tag( 'b_rental.jpg'), show_rental_path(@user) ,id: "1"
+ %tr
+  %td.delete= link_to image_tag( 'b_tenant.jpg'), information_path(@user) ,alt: "Tenant Information"
+ %tr
+  %td= link_to image_tag( 'b_repair.jpg'), new_repair_path
 
   

@@ -4,11 +4,10 @@
 
    body 
    {
-        //text-align: center;
-        
-        //text-size:20px;
+    
         font-family: "droid-sans-mono-1","droid-sans-mono-2", monaco, courier, monospace;
-        
+        background-image:url('bgall.jpg');
+        background-size: 1400px 700px;
         padding: 0;
        
    }
@@ -17,10 +16,25 @@
        margin-left: auto;
        margin-right: auto;
        font-size:20px;
-
+       
    }
    
-   
+   .mid{ text-align:center; }
+
+   .user{ background-image:url('user.jpg');
+        background-size: 1400px 700px; }
+
+   .tenant{ background-image:url('tenant.jpg');
+        background-size: 1400px 700px; }
+   .repair{ background-image:url('new_repair.jpg');
+        background-size: 1400px 700px; }
+
+   .textbig{ font-size:30px;padding: 10px; }
+
+   .TenantInformation{}
+
+   #left{ margin-left:0;text-align:left; }
+   #right{ margin-right:0; }
 
    p#h1{text-align: center;
         font-size:50px;}

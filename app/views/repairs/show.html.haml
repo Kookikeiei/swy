@@ -1,15 +1,39 @@
-%p#notice= notice
+= link_to image_tag( 'b_back.jpg'), users_path
+%body.showrep
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
 
-%p
-  %b Room No:
-  = @repair.room_no
-%p
-  %b Name:
-  = @repair.name
-%p
-  %b Problem:
-  = @repair.problem
+%table
+ %tr
+  %td#notice= notice
+ %tr
+  %td.textbig Room No
+  %td.textbig :
+  %td.textbig= @repair.room_no
+ %tr
+  %td.textbig Name
+  %td.textbig :
+  %td.textbig= @repair.name
+ %tr
+  %td.textbig Problem
+  %td.textbig :
+  %td.textbig= @repair.problem
+ %tr
+  %td &nbsp
+ %tr
+  %td &nbsp
+ %tr
+  %td &nbsp
+ %tr
+  %td= link_to image_tag( 'edit.jpg'), edit_repair_path(@repair)
 
-= link_to 'Edit', edit_repair_path(@repair)
-\|
-= link_to 'Back', users_path

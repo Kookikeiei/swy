@@ -16,7 +16,7 @@ Feature: Show the application function
         And I fill in "password" with "5678000"
         When I press "Login"
         Then I should be on system page
-        And I click "Tenant Information"
+        And I click img "Tenant Information"
         Then I should see "Tenant Information"
 
 Scenario: admin can see member information

@@ -16,16 +16,20 @@ class RentalsController < ApplicationController
     user = User.find(params[:id])
     @rental = Rental.find_by_room_no(user.room_no)
 
-    if @rental == nil
-       redirect_to users_path
-    else   
-      if session[:admin] == '555'
-        respond_to do |format|
-          format.html # show.html.erb
-          format.json { render json: @rental }
-        end
+    if session[:admin] == '555'
+      if @rental == nil
+       redirect_to new_rental_path
       else
-        redirect_to show_user_url @rental
+       respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @rental }
+       end
+      end
+    else
+      if @rental == nil
+       redirect_to users_path
+      else
+       redirect_to show_user_url @rental
       end
     end
   end

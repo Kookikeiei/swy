@@ -19,7 +19,6 @@ Given(/^I am on the signup$/) do
 end
 
 
-
 Given /I am on the (.+)$ / do |page_name|
   visit path_to(page_name)
 end
@@ -51,9 +50,14 @@ When /^I press "([^\"]*)"$/ do |button|
   click_on(button)
 end
 
+When /^I click img "([^\"]*)"$/ do |link|
+  find(:xpath, "//img[@alt = '#{link}']/parent::a").click()
+end
+
 When /^I click "([^\"]*)"$/ do |link|
   click_on(link, match: :first)
 end
+
 
 Given /^I leave the "([^\"]*)"$/  do |field|
   fill_in(field.gsub(' ', '_'), :with => "")

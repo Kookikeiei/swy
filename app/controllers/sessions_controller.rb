@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
 		session[:user_id] = nil
 		session[:admin] = nil
 		flash[:notice] = "Log out successful"
-		render 'new'
+		redirect_to root_path
 	end
 
 end

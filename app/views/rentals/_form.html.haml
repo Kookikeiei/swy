@@ -4,7 +4,7 @@
       %h2= "#{pluralize(@rental.errors.count, "error")} prohibited this rental from being saved:"
       %ul
         - @rental.errors.full_messages.each do |msg|
-          %li= msg
+          //%li= msg
 
   .field
     = f.label :room_no
