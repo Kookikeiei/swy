@@ -1,7 +1,9 @@
 %body.tenant
+
 %table#left 
  %tr
-  %td= link_to image_tag( 'b_logout.jpg'), sessions_destroy_path
+  %td#left= link_to image_tag('b_back.jpg') , admin_path 
+  %td= link_to image_tag( 'b_logout.jpg'), sessions_destroy_path , :id => '13'
 
 
 %br
@@ -30,10 +32,10 @@
    %td &nbsp
    %td= user.room_no
    %td &nbsp&nbsp&nbsp&nbsp
-   %td= link_to image_tag( 'detail.jpg'), information_path(user)
-   %td= link_to image_tag( 'rental.jpg'), show_rental_path(user)
-   %td= link_to image_tag( 'edit_s.jpg'), edit_user_path(user)
-   %td= link_to image_tag( 'delete_s.jpg'), user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+   %td= link_to image_tag( 'detail.jpg'), information_path(user) ,:id => '7'
+   %td= link_to image_tag( 'rental.jpg'), show_rental_path(user) ,:id => '8'
+   %td= link_to image_tag( 'edit_s.jpg'), edit_user_path(user) ,:id => '9'
+   %td= link_to image_tag( 'delete_s.jpg'), user, :method => :delete, :data => { :confirm => 'Are you sure?' } ,:id => '10'
 
 
 

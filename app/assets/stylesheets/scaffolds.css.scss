@@ -47,7 +47,7 @@ div {
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 1px solid red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
@@ -55,15 +55,12 @@ div {
   h2 {
     text-align: left;
     font-weight: bold;
-    padding: 5px 5px 5px 15px;
+    padding: 5px ;
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
     background-color: #c00;
     color: #fff;
   }
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
+  
 }

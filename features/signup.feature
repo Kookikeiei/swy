@@ -16,7 +16,7 @@ Scenario: sing up Successful
   And I fill in "password" with "123456789"
   When I press "Login"
   Then I should be on admin page
-  And I press "New User"
+  And I click "New User"
   Then I should be on signup page
   And I fill in "Name" with "apirak"
   And I fill in "Surname" with "chockdee"
@@ -30,8 +30,17 @@ Scenario: sing up Successful
   And I fill in "Room no" with "0"
   And I fill in "Username" with "khamsaiii"
   And I fill in "Password" with "555555"
-  When I click "Save"
-  Then I should see "User was successfully created."
+  When I press "Save"
+  Then I should see "apirak"
+  Then I should see "chockdee"
+  Then I should see "22"
+  Then I should see "20/10/34"
+  Then I should see "888888888888"
+  Then I should see "abc defg 555" 
+  Then I should see "08979555" 
+  Then I should see "pigdome@hotmail.com"
+  Then I should see "20"
+  Then I should see "0"
     
 
 Scenario: sign up with blank field and invalid field
@@ -40,7 +49,7 @@ Scenario: sign up with blank field and invalid field
   And I fill in "password" with "123456789"
   When I press "Login"
   Then I should be on admin page
-  And I press "New User"
+  And I click "New User"
   Then I should be on signup page
   And I fill in "Name" with ""
   And I fill in "Surname" with "chockdee"
@@ -53,7 +62,7 @@ Scenario: sign up with blank field and invalid field
   And I fill in "Room no" with "0"
   And I fill in "Username" with "ks"
   And I fill in "Password" with "55"
-  When I click "Save"
+  When I press "Save"
   Then I should see "Name can't be blank"
   Then I should see "Age can't be blank"
   Then I should see "Password is too short (minimum is 6 characters)"  

@@ -25,20 +25,14 @@ class RepairsController < ApplicationController
   # GET /repairs/new.json
   def new
     @repair = Repair.new
-
+    @room = User.find(session[:user_id])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @repair }
     end
   end
 
-  # GET /repairs/1/edit
-  def edit
-    @repair = Repair.find(params[:id])
-  end
 
-  # POST /repairs
-  # POST /repairs.json
   def create
     @repair = Repair.new(params[:repair])
     user = User.find_by_name(@repair.name)
@@ -60,22 +54,7 @@ class RepairsController < ApplicationController
     end
   end
 
-  # PUT /repairs/1
-  # PUT /repairs/1.json
-  def update
-    @repair = Repair.find(params[:id])
-
-    respond_to do |format|
-      if @repair.update_attributes(params[:repair])
-        format.html { redirect_to @repair, notice: 'Repair was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @repair.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
+  
   # DELETE /repairs/1
   # DELETE /repairs/1.json
   def destroy

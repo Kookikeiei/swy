@@ -1,24 +1,34 @@
-%p#notice= notice
+%body.show
+= link_to image_tag('b_back.jpg'), meminf_path
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
 
-%p
-  %b Room no:
-  = @rental.room_no
-%p
-  %b Rent:
-  = @rental.rent
-%p
-  %b Name:
-  = @rental.name
-%p
-  %b Elec unit:
-  = @rental.elec_unit
-%p
-  %b Water unit:
-  = @rental.water_unit
-%p
-  %b Unpay:
-  = @rental.unpay
 
-= link_to 'Edit', edit_rental_path(@rental)
-\|
-= link_to 'Back', meminf_path
+
+%table#rent
+ %tr 
+  %td#rent= @rental.room_no
+ %tr
+  %td#rent= @rental.rent
+ %tr
+  %td#rent= @rental.name
+ %tr
+  %td#rent= @rental.elec_unit
+ %tr
+  %td#rent= @rental.water_unit
+ %tr
+  %td#rent= @rental.unpay
+ %tr
+  %td= link_to image_tag('edit_s.jpg'),session[:admin]=='555' ? edit_rental_path(@rental): show_rental_path(@rental) ,:id =>'16'
+
+
+
+

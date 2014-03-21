@@ -18,15 +18,15 @@
 
   .field
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    = f.text_field :room_no
+    = f.hidden_field :room_no ,:value => @room.room_no
   .field
     %br
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    = f.text_field :name
+    = f.hidden_field :name , :value => @room.name
   .field
     %br 
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    = f.text_area :problem
+    = f.text_area :problem , :id => 'Problem'
   .actions
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp

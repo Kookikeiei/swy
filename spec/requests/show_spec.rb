@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'simplecov'
+SimpleCov.start 'rails'
 
 describe 'show application' do
   before { visit root_path }
@@ -11,9 +13,9 @@ describe 'show application' do
       fill_in :password, with: user.password
       click_on 'Login'
     end
-      it { should have_link 'Rental' }
-      it { should have_link 'Tenant Information' }
-      it { should have_link 'Repair Notification' }
+      it { should have_link find('#1').click }
+      it { should have_link find('#2').click }
+      it { should have_link find('#3').click }
    
   end
 
@@ -23,12 +25,11 @@ describe 'show application' do
       fill_in :username, with: user.username
       fill_in :password, with: user.password
       click_on 'Login'
-      click_on 'Tenant Information'
+      find('#1').click
     end
       it { should have_content(user.name) }
       it { should have_content(user.birth_date) }
       it { should have_content(user.address) }
-      it { should have_content(user.email) }
       it { should have_content(user.room_no) }
       
    
@@ -42,11 +43,10 @@ describe 'show application' do
       fill_in :password, with: '123456789'
       click_on 'Login'
       end
-      it { should have_content('Welcome back, admin!') }
-      it { should have_link 'New User' }
-      it { should have_link 'Member Information' }
-      it { should have_link 'Repair Notification' }
-      it { should have_link 'Log out' }
+      it { should have_link find('#6').click }
+      it { should have_link find('#4').click }
+      it { should have_link find('#5').click }
+      it { should have_link find('#13').click }
   end
 
 

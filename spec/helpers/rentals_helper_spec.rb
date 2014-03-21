@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'simplecov'
+
 
 # Specs in this file have access to a helper object that includes
 # the RentalsHelper. For example:

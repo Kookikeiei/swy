@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+  class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
@@ -49,8 +49,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
   def update
     @user = User.find(params[:id])
 
@@ -64,11 +62,12 @@ class UsersController < ApplicationController
       end
     end
   end
-
-  # DELETE /users/1
-  # DELETE /users/1.json
+  
   def destroy
     @user = User.find(params[:id])
+    if session[:admin] == '555'
+      session[:admin] = nil
+    end
     @user.destroy
 
     respond_to do |format|
@@ -78,10 +77,10 @@ class UsersController < ApplicationController
   end
 
   def admin 
-    @user = User.find(session[:user_id]) 
-    if @user.username != 'admin'
+    
+    if session[:admin] != '555'
       flash[:notice] = 'You are not admin please Login'
-      redirect_to sessions_new_path 
+      redirect_to root_path 
     else
       respond_to do |format|
         format.html # index.html.erb
@@ -109,10 +108,10 @@ class UsersController < ApplicationController
   end
   
   def meminf
-    @user = User.find(session[:user_id]) 
-    if @user.username != 'admin'
+    
+    if session[:admin] != '555'
       flash[:notice] = 'You are not admin please Login'
-      redirect_to sessions_new_path 
+      redirect_to root_path 
     else
       @users = User.all
       respond_to do |format|

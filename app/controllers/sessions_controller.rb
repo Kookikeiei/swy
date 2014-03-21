@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 			   flash[:notice] = 'Welcome back, ' + user.username + '!'
 			   redirect_to admin_path 
 			else
-				 session[:user_id] = user.id
+			  session[:user_id] = user.id
 			  flash[:notice] = 'Welcome back, ' + user.username + '!'
 			  redirect_to users_path 
 		    end

@@ -1,7 +1,7 @@
 %body.user
 %table#left 
  %tr
-  %td= link_to image_tag( 'b_logout.jpg'), sessions_destroy_path
+  %td= link_to image_tag( 'b_logout.jpg'), sessions_destroy_path ,:id => '13'
 
 
 %br
@@ -30,10 +30,10 @@
 %br
 %table
  %tr
-  %td= link_to image_tag( 'b_rental.jpg'), show_rental_path(@user) ,id: "1"
+  %td= link_to image_tag( 'b_rental.jpg'), show_rental_path(@user) ,:id => '1'
  %tr
-  %td.delete= link_to image_tag( 'b_tenant.jpg'), information_path(@user) ,alt: "Tenant Information"
+  %td.delete= link_to image_tag( 'b_tenant.jpg'), information_path(@user) ,:id => '2'
  %tr
-  %td= link_to image_tag( 'b_repair.jpg'), new_repair_path
+  %td= link_to image_tag( 'b_repair.jpg'), new_repair_path ,:id => '3'
 
   

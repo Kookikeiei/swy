@@ -1,9 +1,19 @@
+%body.showrep
 = link_to image_tag( 'b_back.jpg'), admin_path
 
+%br
+%br
+%br
+%br
+%br
+%br
+%br
 %table
   %tr
     %th Room No
+    %th
     %th Name
+    %th
     %th Problem
     %th
     %th
@@ -12,10 +22,12 @@
   - @repairs.each do |repair|
     %tr
       %td= repair.room_no
+      %td
       %td= repair.name
+      %td &nbsp
       %td= repair.problem
-      %td= link_to 'Edit', edit_repair_path(repair)
-      %td= link_to 'Remove Notification', repair, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      //%td= link_to image_tag('edit_s.jpg'), edit_repair_path(repair)
+      %td= link_to image_tag('delete_s.jpg'), repair, :method => :delete, :data => { :confirm => 'Are you sure?' } ,:id => '15'
 
 %br
 

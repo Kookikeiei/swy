@@ -16,8 +16,19 @@ Feature: Show the application function
         And I fill in "password" with "5678000"
         When I press "Login"
         Then I should be on system page
-        And I click img "Tenant Information"
-        Then I should see "Tenant Information"
+        And I click "Tenant Information"
+        Then I should see "kham"
+        Then I should see "khamsai"
+        Then I should see "ks"
+        Then I should see "21"
+        Then I should see "06/01/92"
+        Then I should see "22222222222"
+        Then I should see "b6"
+        Then I should see "ks@hot.com"
+        Then I should see "30"
+        Then I should see "s01"
+        Then I should see "127344"
+
 
 Scenario: admin can see member information
         Given I am on the login 

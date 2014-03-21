@@ -10,6 +10,51 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+
+When /^I click "Tenant Information"$/ do
+   find("#2").click
+end
+
+When /^I click "Logout"$/ do
+   find("#13").click
+end
+
+When /^I click "Delete"$/ do
+   find("#15", match: :prefer_exact).click
+end
+
+When /^I click "New User"$/ do
+   find("#6").click
+end
+
+When /^I click "Repair Notification"$/ do
+   find("#3").click
+end
+
+When /^I click "Repair Notification admin"$/ do
+   find("#5").click
+end
+
+When /^I click "Rental"$/ do
+   find("#1").click
+end
+
+When /^I click "adminRental"$/ do
+   find("#8" , match: :prefer_exact).click
+end
+
+When /^I click "Member Information"$/ do
+   find("#4").click
+end
+
+When /^I click "Edit"$/ do
+   find("#16" ,match: :prefer_exact).click
+end
+
+
+
+
+
 Given(/^I am on the login$/) do
   visit path_to('login page')
 end
@@ -17,6 +62,15 @@ end
 Given(/^I am on the signup$/) do
   visit path_to('signup page')
 end
+
+Given(/^I am on the member$/) do
+  visit path_to('member page')
+end
+
+Given(/^I am on the admin$/) do
+  visit path_to('admin page')
+end
+
 
 
 Given /I am on the (.+)$ / do |page_name|
@@ -50,13 +104,11 @@ When /^I press "([^\"]*)"$/ do |button|
   click_on(button)
 end
 
-When /^I click img "([^\"]*)"$/ do |link|
-  find(:xpath, "//img[@alt = '#{link}']/parent::a").click()
-end
 
-When /^I click "([^\"]*)"$/ do |link|
-  click_on(link, match: :first)
-end
+
+#When /^I click "([^\"]*)"$/ do |link|
+#  click_on(link, match: :first)
+#end
 
 
 Given /^I leave the "([^\"]*)"$/  do |field|

@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'simplecov'
+SimpleCov.start 'rails'
 
 describe 'Repair' do
   before { visit root_path }
@@ -11,9 +13,9 @@ describe 'Repair' do
       fill_in :password, with: user.password
       click_on 'Login'
     end
-      it { should have_link 'Rental' }
-      it { should have_link 'Tenant Information' }
-      it { should have_link 'Repair Notification' }
+      it { should have_link find('#1').click }
+      it { should have_link find('#2').click }
+      it { should have_link find('#3').click }
    
   end
 
@@ -23,15 +25,11 @@ describe 'Repair' do
       fill_in :username, with: user.username
       fill_in :password, with: user.password
       click_on 'Login'
-      click_on 'Repair Notification'  
-      #fill_in :Room_no, with: user.room_no
-      fill_in :Name, with: user.username
+      find('#3').click  
       fill_in :Problem, with: 'The bathroom has problem'
       click_on 'Post Problem'
     end
-      it { should have_content("Problem") }
-      it { should have_content("Room no") }
-      it { should have_content("Name") }
+      it { should have_content("The bathroom has problem") }
       
    
   end
@@ -39,20 +37,29 @@ describe 'Repair' do
 
   describe "admin can manage rental" do
      FactoryGirl.create(:admin)
-     FactoryGirl.create(:repair)
+     p = FactoryGirl.create(:repair)
      #repair = FactoryGirl.create(:repair)
       before do
       fill_in :username, with: 'admin'
       fill_in :password, with: '123456789'
       click_on 'Login'
-      click_on 'Repair Notification'
+      find('#5').click
       end
-      it { should have_content("Problem") }
-      it { should have_content("Room No") }
-      it { should have_content("Name") }
-      it { should have_link 'Remove Notification' }
+      it { should have_content(p.problem) }
+      it { should have_link find('#15',match: :prefer_exact).click }
   end
-
+  
+  describe "admin can manage rental" do
+     FactoryGirl.create(:admin)
+     #repair = FactoryGirl.create(:repair)
+      before do
+      fill_in :username, with: 'admin'
+      fill_in :password, with: '123456789'
+      click_on 'Login'
+      find('#5').click
+      find('#15',match: :prefer_exact).click
+      end
+  end
 
   
  

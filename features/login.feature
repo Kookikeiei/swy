@@ -37,3 +37,23 @@ Feature: Log in to the Apartment Application
         And I fill in "password" with "123456789"
         When I press "Login"
         Then I should be on admin page
+
+
+ Scenario: Admin log in 
+        Given I am on the login 
+        And I fill in "username" with "admin"
+        And I fill in "password" with "123456789"
+        When I press "Login"
+        Then I should be on admin page
+        And I click "Logout"
+        Then I should be on root page
+ 
+ Scenario: not Admin call member information 
+        Given I am on the member
+        Then I should be on root page
+        Then I should see "You are not admin please Login"
+ 
+ Scenario: not Admin call admin pag 
+        Given I am on the admin
+        Then I should be on root page
+        Then I should see "You are not admin please Login"

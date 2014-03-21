@@ -1,3 +1,17 @@
-// Place all the styles related to the Rentals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.rental{
+	background-image:url('add_rental.jpg');
+    background-size: 1400px 700px;
+}
+.show{
+	background-image:url('show_rental.jpg');
+    background-size: 1400px 700px;
+}
+
+table#rent,tr#rent,td#rent
+   {
+       margin-left: auto;
+       margin-right: auto;
+       font-size:20px;
+       padding:7px;
+   }

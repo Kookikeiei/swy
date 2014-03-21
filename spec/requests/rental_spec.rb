@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'simplecov'
+SimpleCov.start 'rails'
 
 describe 'rental' do
   before { visit root_path }
@@ -11,9 +13,9 @@ describe 'rental' do
       fill_in :password, with: user.password
       click_on 'Login'
     end
-      it { should have_link 'Rental' }
-      it { should have_link 'Tenant Information' }
-      it { should have_link 'Repair Notification' }
+      it { should have_link find('#1').click }
+      it { should have_link find('#2').click }
+      it { should have_link find('#3').click }
    
   end
 
@@ -24,7 +26,7 @@ describe 'rental' do
       fill_in :username, with: user.username
       fill_in :password, with: user.password
       click_on 'Login'
-      click_on 'Rental'
+      find('#1').click
     end
       it { should have_content(rental.room_no) }
       it { should have_content(rental.rent) }
@@ -36,6 +38,22 @@ describe 'rental' do
    
   end
 
+  describe 'user see rental' do
+     rental = FactoryGirl.create(:rental)
+      user = FactoryGirl.create(:user)
+   before do
+      fill_in :username, with: user.username
+      fill_in :password, with: user.password
+      click_on 'Login'
+      find('#1').click
+      find('#16').click
+    end
+      it { should have_link find('#16').click }
+      
+      
+   
+  end
+
 
   describe "admin can manage rental" do
      FactoryGirl.create(:admin)
@@ -43,13 +61,26 @@ describe 'rental' do
       fill_in :username, with: 'admin'
       fill_in :password, with: '123456789'
       click_on 'Login'
-      click_on 'Member Information'
+      find('#4').click
       end
-      it { should have_link 'Rental' }
-      it { should have_link 'Log out' }
+      it { should have_link find('#7', match: :prefer_exact).click }
+      it { should have_link find('#13').click }
   end
 
-
+  describe "admin can manage rental" do
+     FactoryGirl.create(:admin)
+      before do
+      fill_in :username, with: 'admin'
+      fill_in :password, with: '123456789'
+      click_on 'Login'
+      find('#4').click
+      find('#8',match: :prefer_exact).click
+      find('#16').click
+      fill_in :unpay, with: '123456789'
+      click_on 'Save'
+      end
+     it { should have_content('123456789') }
+  end
   
  
 end

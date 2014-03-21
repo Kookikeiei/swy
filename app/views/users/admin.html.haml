@@ -1,12 +1,28 @@
+%body.admin
+%table#left
+ %tr
+  %td= link_to image_tag('b_logout.jpg'), sessions_destroy_path , :id => '13'
 %p#notice= notice
-%h1 Admin page
 
+%br
+%br
+%br
+%br
+%br
+%br
 
-= link_to 'Member Information', meminf_path
-%br
-= link_to 'Repair Notification', repairs_path
-%br
-= link_to 'New User', new_user_path
-%br
-= link_to 'Log out', sessions_destroy_path
+%table
+ %tr
+  %td &nbsp
+  %td= link_to image_tag('tenant_list.jpg'), meminf_path ,:id => '4'
+  %br
+ %tr
+  %td &nbsp
+  %td= link_to image_tag('repair_noti.jpg'), repairs_path ,:id => '5'
+  %br
+ %tr
+  %td &nbsp
+  %td= link_to image_tag('ads_tenant.jpg'), new_user_path ,:id => '6'
+  %br
+ 
 

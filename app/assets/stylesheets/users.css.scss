@@ -31,7 +31,13 @@
 
    .textbig{ font-size:30px;padding: 10px; }
 
-   .TenantInformation{}
+   .admin{ background-image:url('admin.jpg');
+        background-size: 1400px 700px; }
+
+   .add_tenant{ background-image:url('add_tenant.jpg');
+        background-size: 1400px 700px; }
+
+   .margin_10{ padding:10; }
 
    #left{ margin-left:0;text-align:left; }
    #right{ margin-right:0; }

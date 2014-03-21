@@ -1,42 +1,60 @@
-%p#notice= notice
+%body.tenant
 
-%p
-  %b Name:
-  = @user.name
-%p
-  %b Surname:
-  = @user.surname
-%p
-  %b Age:
-  = @user.age
-%p
-  %b Birth date:
-  = @user.birth_date
-%p
-  %b Personal:
-  = @user.personal_id
-%p
-  %b Address:
-  = @user.address
-%p
-  %b Phone:
-  = @user.phone
-%p
-  %b Email:
-  = @user.email
-%p
-  %b Rent:
-  = @user.rent
-%p
-  %b Room no:
-  = @user.room_no
-%p
-  %b Username:
-  = @user.username
-%p
-  %b Password:
-  = @user.password
+%table#left 
+ %tr
+  %td#left= link_to image_tag( 'b_back.jpg'), session[:admin] == '555' ? meminf_path : users_path
+  %td= link_to image_tag( 'b_logout.jpg'), sessions_destroy_path
 
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%table
+ %tr
+  %td.textbig Name
+  %td.textbig :
+  %td.textbig= @user.name 
+ %tr
+  %td.textbig Surname
+  %td.textbig :
+  %td.textbig= @user.surname
+ %tr
+  %td.textbig Age
+  %td.textbig :
+  %td.textbig= @user.age
+ %tr
+  %td.textbig Birth Date
+  %td.textbig :
+  %td.textbig= @user.birth_date
+ %tr
+  %td.textbig Personal ID
+  %td.textbig :
+  %td.textbig= @user.personal_id
+ %tr
+  %td.textbig Address
+  %td.textbig :
+  %td.textbig= @user.address
+ %tr
+  %td.textbig Phone
+  %td.textbig :
+  %td.textbig= @user.phone
+ %tr
+  %td.textbig E-mail
+  %td.textbig :
+  %td.textbig= @user.email
+ %tr
+  %td.textbig Room No.
+  %td.textbig :
+  %td.textbig= @user.room_no
+ %tr
+  %td.textbig Rent
+  %td.textbig :
+  %td.textbig= @user.rent
+
+
+
+%br

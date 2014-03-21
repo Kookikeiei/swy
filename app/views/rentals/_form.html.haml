@@ -1,28 +1,35 @@
+
 = form_for @rental do |f|
   - if @rental.errors.any?
     #error_explanation
       %h2= "#{pluralize(@rental.errors.count, "error")} prohibited this rental from being saved:"
       %ul
         - @rental.errors.full_messages.each do |msg|
-          //%li= msg
+          %li= msg
 
   .field
-    = f.label :room_no
-    = f.text_field :room_no
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    = f.text_field :room_no , :value => @room == nil ? @rental.room_no : @room.room_no
+    
   .field
-    = f.label :rent
-    = f.text_field :rent
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    = f.text_field :name , :value => @room == nil ? @rental.name : @room.name
+    
   .field
-    = f.label :name
-    = f.text_field :name
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    = f.text_field :rent , :id => 'rent'
   .field
-    = f.label :elec_unit
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     = f.text_field :elec_unit
   .field
-    = f.label :water_unit
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     = f.text_field :water_unit
   .field
-    = f.label :unpay
-    = f.text_field :unpay
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    = f.text_field :unpay ,:id => 'unpay'
   .actions
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    
     = f.submit 'Save'

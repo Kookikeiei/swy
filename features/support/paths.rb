@@ -21,7 +21,10 @@ module NavigationHelpers
       '/repairs/new'
     when /adrep\s?page/
       '/repairs'
-    
+    when /about\s?page/
+      '/about'
+    when /root\s?page/
+      '/'
 
     else
       begin
